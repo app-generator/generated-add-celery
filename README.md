@@ -75,5 +75,26 @@ At this point, the app runs at `http://127.0.0.1:8000/`.
 
 <br />
 
+
+> `Run celery`
+
+```bash
+$ celery -A core worker
+```
+
+> `Execute celery tasks`
+
+```bash
+$ python manage.py shell
+
+# Shell commands
+>> from home.tasks import add
+>> result = add.delay(5, 6)
+>> result.get()
+11  # output
+```
+
+<br />
+
 ---
 Starter built with [App Generator](https://app-generator.dev/), a free service provided by **AppSeed**.

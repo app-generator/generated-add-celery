@@ -187,3 +187,12 @@ REST_FRAMEWORK = {
 }
 
 # __API_GENERATOR__END
+
+
+# ### Async Tasks (Celery) Settings ###
+
+CELERY_BROKER_URL         = os.environ.get("CELERY_BROKER", "redis://localhost:6379")
+CELERY_RESULT_BACKEND     = os.environ.get("CELERY_BROKER", "redis://localhost:6379")
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
